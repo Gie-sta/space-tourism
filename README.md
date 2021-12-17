@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://space-tourism-website-gie-sta.herokuapp.com/)
+- Live Site URL: [Space tourism website](https://space-tourism-website-gie-sta.herokuapp.com/)
 
 ## My process
 
