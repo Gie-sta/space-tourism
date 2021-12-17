@@ -41,26 +41,26 @@ const Navbar = () => {
       <hr />
       <ul className='nav-menu'>
         <li className='nav-menu-item'>
-          <NavLink className='nav-menu-item-link' activestyle="active" to='/'>
+          <NavLink className='nav-menu-item-link' to='/'>
             <span>00</span>Home
           </NavLink>
         </li>
         <li className='nav-menu-item'>
-          <NavLink className='nav-menu-item-link' activestyle="active" to='/destination'
+          <NavLink className='nav-menu-item-link' to='/destination'
             onClick={() => selectDestination(data.destinations[0])}
           >
             <span>01</span>destination
           </NavLink>
         </li>
         <li className='nav-menu-item'>
-          <NavLink className='nav-menu-item-link' activestyle="active" to='/crew'
+          <NavLink className='nav-menu-item-link' to='/crew'
             onClick={() => selectCrew(data.crew[0])}
           >
             <span>02</span>crew
           </NavLink>
         </li>
         <li className='nav-menu-item'>
-          <NavLink className='nav-menu-item-link' activestyle="active" to='/technology'
+          <NavLink className='nav-menu-item-link' to='/technology'
             onClick={() => selectTechnology(data.technology[0])}
           >
             <span>03</span>technology
