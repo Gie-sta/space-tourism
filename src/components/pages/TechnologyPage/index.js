@@ -70,7 +70,7 @@ const TechnologyPage = () => {
   }
 
   return (
-    <section className={styles.bacground}>
+    <section className={styles.bacground} role='contentinfo'>
       <h3 className={styles.header}>
         <span>03</span>space lounch 101
       </h3>

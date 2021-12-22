@@ -75,7 +75,7 @@ const CrewPage = () => {
   }
 
   return (
-    <section className={styles.background}>
+    <section className={styles.background} role='contentinfo'>
       <div className={styles.container}>
         <div className={styles.info}>
           <SwitchTransition mode="out-in">

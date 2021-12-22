@@ -60,7 +60,7 @@ const DestinationPage = () => {
 
 
   return (
-    <section className={styles.background}>
+    <section className={styles.background} role='contentinfo'>
       <h3 className={styles.header}>
         <span>01</span>pick your destination
       </h3>

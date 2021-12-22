@@ -32,7 +32,7 @@ const MobileMenu = () => {
   }
 
   return (
-    <div className='mobile'>
+    <nav className='mobile' role='navigation'>
       <div className='mobile-container' id={mobileMenu ? 'show-mobile-menu' : 'hide-mobile-menu'}>
         <div className="cancel-mobile-menu">
           <img src={close} alt="" onClick={() => handleClick()} className='cancel-sign' />
@@ -59,7 +59,7 @@ const MobileMenu = () => {
         </ul>
 
       </div>
-    </div>
+    </nav>
   )
 }
 
