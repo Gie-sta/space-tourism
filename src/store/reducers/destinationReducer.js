@@ -1,7 +1,4 @@
-
-
 const initialState = "Moon";
-
 
 export const destinationReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -9,6 +6,6 @@ export const destinationReducer = (state = initialState, action) => {
       return { ...state, destination: action.payload };
 
     default:
-      return state
+      return state;
   }
-}
+};

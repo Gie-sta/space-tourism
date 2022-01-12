@@ -1,66 +1,68 @@
-import React from 'react';
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { destinationPick } from '../../../store/actions';
+import { destinationPick } from "../../../store/actions";
 import { SwitchTransition, CSSTransition } from "react-transition-group";
 
-import data from '../../../helpers/data';
-import imageMoon from '../../../assets/destination/image-moon.webp';
-import imageMars from '../../../assets/destination/image-mars.webp';
-import imageEuropa from '../../../assets/destination/image-europa.webp';
-import imageTitan from '../../../assets/destination/image-titan.webp';
+import data from "../../../helpers/data";
+import imageMoon from "../../../assets/destination/image-moon.webp";
+import imageMars from "../../../assets/destination/image-mars.webp";
+import imageEuropa from "../../../assets/destination/image-europa.webp";
+import imageTitan from "../../../assets/destination/image-titan.webp";
 
 import styles from "./styles.module.scss";
 
 const DestinationPage = () => {
-
-  const destinationState = useSelector((state) => state.destinationReducer.destination);
+  const destinationState = useSelector(
+    (state) => state.destinationReducer.destination
+  );
 
   const dispatch = useDispatch();
 
   //select destination
   const selectDestination = (destination) => {
     dispatch(destinationPick(destination));
-  }
-  const destination = destinationState ? destinationState : data.destinations[0];
+  };
+  const destination = destinationState
+    ? destinationState
+    : data.destinations[0];
 
   //show active destination
   const showActiveMoon = () => {
-    if (destination.name === 'Moon') {
-      return styles.active
+    if (destination.name === "Moon") {
+      return styles.active;
     }
-  }
+  };
   const showActiveMars = () => {
     if (destination.name === "Mars") {
-      return styles.active
+      return styles.active;
     }
-  }
+  };
   const showActiveEuropa = () => {
     if (destination.name === "Europa") {
-      return styles.active
+      return styles.active;
     }
-  }
+  };
   const showActiveTitan = () => {
     if (destination.name === "Titan") {
-      return styles.active
+      return styles.active;
     }
-  }
+  };
 
   //show image
   const showImage = (destination) => {
-    if (destination.name === 'Moon') {
+    if (destination.name === "Moon") {
       return imageMoon;
-    } else if (destination.name === 'Mars') {
+    } else if (destination.name === "Mars") {
       return imageMars;
-    } else if (destination.name === 'Europa') {
+    } else if (destination.name === "Europa") {
       return imageEuropa;
     } else {
       return imageTitan;
     }
-  }
-
+  };
 
   return (
-    <section className={styles.background} role='contentinfo'>
+    <section className={styles.background} role="contentinfo">
       <h3 className={styles.header}>
         <span>01</span>pick your destination
       </h3>
@@ -71,10 +73,10 @@ const DestinationPage = () => {
               key={destination.name}
               timeout={{ enter: 2000, exit: 500 }}
               classNames={{
-                enter: styles['fade-enter'],
-                enterActive: styles['fade-enter-active'],
-                exit: styles['fade-exit'],
-                exitActive: styles['fade-enterexit-active'],
+                enter: styles["fade-enter"],
+                enterActive: styles["fade-enter-active"],
+                exit: styles["fade-exit"],
+                exitActive: styles["fade-enterexit-active"],
               }}
             >
               <img src={showImage(destination)} alt={destination.name} />
@@ -86,29 +88,39 @@ const DestinationPage = () => {
             <li
               onClick={() => selectDestination(data.destinations[0])}
               className={showActiveMoon()}
-            >moon</li>
+            >
+              moon
+            </li>
             <li
-              onClick={() => { selectDestination(data.destinations[1]) }}
+              onClick={() => {
+                selectDestination(data.destinations[1]);
+              }}
               className={showActiveMars()}
-            >mars</li>
+            >
+              mars
+            </li>
             <li
               onClick={() => selectDestination(data.destinations[2])}
               className={showActiveEuropa()}
-            >europa</li>
+            >
+              europa
+            </li>
             <li
               onClick={() => selectDestination(data.destinations[3])}
               className={showActiveTitan()}
-            >titan</li>
+            >
+              titan
+            </li>
           </ul>
           <SwitchTransition mode="out-in">
             <CSSTransition
               key={destination.name}
               timeout={{ enter: 2000, exit: 500 }}
               classNames={{
-                enter: styles['fade-enter'],
-                enterActive: styles['fade-enter-active'],
-                exit: styles['fade-exit'],
-                exitActive: styles['fade-enterexit-active'],
+                enter: styles["fade-enter"],
+                enterActive: styles["fade-enter-active"],
+                exit: styles["fade-exit"],
+                exitActive: styles["fade-enterexit-active"],
               }}
             >
               <div className={styles.describtion}>
@@ -130,8 +142,8 @@ const DestinationPage = () => {
           </SwitchTransition>
         </div>
       </div>
-    </section >
-  )
-}
+    </section>
+  );
+};
 
-export default DestinationPage
+export default DestinationPage;

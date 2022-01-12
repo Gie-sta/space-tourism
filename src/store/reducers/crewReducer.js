@@ -1,4 +1,3 @@
-
 const initialState = "Douglas Hurley";
 
 export const crewReducer = (state = initialState, action) => {
@@ -6,6 +5,6 @@ export const crewReducer = (state = initialState, action) => {
     case "CREW_PICK":
       return { ...state, crew: action.payload };
     default:
-      return state
+      return state;
   }
-}
+};
